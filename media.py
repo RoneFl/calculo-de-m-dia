@@ -1,20 +1,25 @@
+# Função para validar a entrada de notas entre 0 e 10
+def validar_nota():
+    while True:
+        nota = float(input("Digite uma nota entre 0 e 10: "))
+        if 0 <= nota <= 10:
+            return nota
+        else:
+            print("Entrada inválida. Digite uma nota entre 0 e 10.")
 
-print('Calcule a sua média. Por favor, insira suas notas abaixo:\n')
+# Solicita ao usuário que insira as três notas
+nota1 = validar_nota()
+nota2 = validar_nota()
+nota3 = validar_nota()
 
-
-nota1 = float(input('Digite a primeira nota: '))
-nota2 = float(input('Digite a segunda nota: '))
-nota3 = float(input('Digite a terceira nota: '))
-
+# Calcula a média das notas
 media = (nota1 + nota2 + nota3) / 3
 
+# Exibe a média
+print("Média:", media)
 
-print('Média: ',media)
-
-if media <7:
-    print('Você foi reprovado')
+# Verifica se a média é maior ou igual a 7
+if media >= 7:
+    print("Aprovado")
 else:
-    print('Parabéns. Você foi aprovado!')
-
-
-
+    print("Reprovado")
